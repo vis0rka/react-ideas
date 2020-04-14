@@ -1,12 +1,12 @@
 import React from "react";
-import RoboPage from "pages";
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
+import Router from "route";
 
 const App = () => {
   return (
     <>
-      <RoboPage />
+      <Router />
       <GlobalStyle />
     </>
   );
@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   body,
   #root {
     height: 100vh;
+    font-size:1rem;
 }`;
 
 export default App;

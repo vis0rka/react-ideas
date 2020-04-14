@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import SearchBox from "components/SearchBox";
 import Scroll from "components/Scroll";
 import CardList from "components/CardList";
+import FramedLayout from "layouts/Framed";
 
 const RoboPage = () => {
   const [searchField, setSearchField] = useState("");
@@ -24,13 +25,12 @@ const RoboPage = () => {
   return !robots.length ? (
     <h1>Loading</h1>
   ) : (
-    <div className="tc">
-      <h1 className="f1">RoboFriends</h1>
+    <FramedLayout title="Robo Friends">
       <SearchBox searchChange={setSearchField} searchfield={searchField} />
       <Scroll>
         <CardList robots={robots && filteredRobots} />
       </Scroll>
-    </div>
+    </FramedLayout>
   );
 };
 
